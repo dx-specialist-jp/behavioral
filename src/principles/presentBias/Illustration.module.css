@@ -1,0 +1,20 @@
+.reach {
+  animation: grab 1.4s ease-in-out infinite;
+  transform-origin: 45px 90px;
+}
+
+@keyframes grab {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reach {
+    animation: none;
+  }
+}

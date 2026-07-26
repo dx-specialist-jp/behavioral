@@ -1,0 +1,20 @@
+.beam {
+  animation: tilt 3s ease-in-out infinite;
+  transform-origin: 100px 55px;
+}
+
+@keyframes tilt {
+  0%,
+  100% {
+    transform: rotate(-9deg);
+  }
+  50% {
+    transform: rotate(-11deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beam {
+    animation: none;
+  }
+}

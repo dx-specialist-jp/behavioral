@@ -1,0 +1,22 @@
+.vivid {
+  animation: glow 2s ease-in-out infinite;
+  transform-origin: 78px 75px;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vivid {
+    animation: none;
+  }
+}

@@ -1,0 +1,36 @@
+.weight {
+  animation: bob 3.5s ease-in-out infinite;
+  transform-origin: 128px 108px;
+}
+
+.balloon {
+  animation: swing 2.4s ease-in-out infinite;
+  transform-origin: 70px 20px;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: rotate(-2deg) translateY(0);
+  }
+  50% {
+    transform: rotate(2deg) translateY(-3px);
+  }
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weight,
+  .balloon {
+    animation: none;
+  }
+}

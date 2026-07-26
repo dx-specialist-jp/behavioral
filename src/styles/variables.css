@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light;
+
+  --color-bg: #f7f7fb;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-text: #1a1a2e;
+  --color-text-muted: #5b5b6f;
+  --color-border: #e3e3ec;
+  --color-border-strong: #cfcfe0;
+  --color-focus: #2f5fd0;
+  --shadow-card: 0 1px 3px rgba(20, 20, 40, 0.08), 0 8px 24px rgba(20, 20, 40, 0.06);
+
+  --font-sans: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, -apple-system,
+    sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+
+  /* per-principle accent colors, evenly spaced hues for at-a-glance distinction */
+  --accent-anchoring: hsl(220 62% 42%);
+  --accent-loss-aversion: hsl(10 62% 42%);
+  --accent-status-quo: hsl(130 55% 34%);
+  --accent-social-proof: hsl(40 75% 42%);
+  --accent-framing: hsl(280 55% 48%);
+  --accent-sunk-cost: hsl(310 55% 42%);
+  --accent-present-bias: hsl(190 65% 34%);
+  --accent-confirmation: hsl(70 55% 32%);
+  --accent-mental-accounting: hsl(100 45% 32%);
+  --accent-default-effect: hsl(250 50% 50%);
+  --accent-availability: hsl(340 60% 44%);
+  --accent-endowment: hsl(160 55% 30%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --color-bg: #131320;
+    --color-surface: #1c1c2c;
+    --color-surface-raised: #22223494;
+    --color-text: #eceef5;
+    --color-text-muted: #a3a3ba;
+    --color-border: #2c2c40;
+    --color-border-strong: #3a3a52;
+    --color-focus: #7fa4ff;
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+
+    --accent-anchoring: hsl(220 75% 68%);
+    --accent-loss-aversion: hsl(10 75% 66%);
+    --accent-status-quo: hsl(130 50% 56%);
+    --accent-social-proof: hsl(40 80% 60%);
+    --accent-framing: hsl(280 65% 72%);
+    --accent-sunk-cost: hsl(310 60% 68%);
+    --accent-present-bias: hsl(190 70% 58%);
+    --accent-confirmation: hsl(70 55% 58%);
+    --accent-mental-accounting: hsl(100 45% 56%);
+    --accent-default-effect: hsl(250 70% 76%);
+    --accent-availability: hsl(340 65% 68%);
+    --accent-endowment: hsl(160 50% 54%);
+  }
+}

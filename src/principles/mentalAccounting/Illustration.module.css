@@ -1,0 +1,25 @@
+.flyingCoin {
+  animation: arc 2.2s ease-in-out infinite;
+}
+
+@keyframes arc {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(28px, -22px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(46px, -10px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flyingCoin {
+    animation: none;
+    opacity: 0;
+  }
+}

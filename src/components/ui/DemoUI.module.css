@@ -1,0 +1,129 @@
+.shell {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  margin: var(--space-4) 0;
+}
+
+.bar {
+  height: 6px;
+  background: var(--accent, var(--color-focus));
+}
+
+.body {
+  padding: var(--space-4);
+}
+
+.prompt {
+  margin: 0 0 var(--space-3);
+  font-weight: 600;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.button {
+  appearance: none;
+  border: 2px solid var(--color-border-strong);
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.button:hover {
+  border-color: var(--accent, var(--color-focus));
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.buttonPrimary {
+  composes: button;
+  background: var(--accent, var(--color-focus));
+  border-color: var(--accent, var(--color-focus));
+  color: #fff;
+}
+
+.buttonSelected {
+  border-color: var(--accent, var(--color-focus));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent, var(--color-focus)) 35%, transparent);
+}
+
+.sliderRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sliderLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--accent, var(--color-focus));
+}
+
+.result {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent, var(--color-focus)) 12%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--accent, var(--color-focus)) 35%, transparent);
+  font-size: 0.95rem;
+  animation: fade-in 0.25s ease;
+}
+
+.resultTitle {
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: var(--accent, var(--color-focus));
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+}
+
+.tally {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result {
+    animation: none;
+  }
+}

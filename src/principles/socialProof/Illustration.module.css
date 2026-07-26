@@ -1,0 +1,21 @@
+.follower {
+  animation: align 2.6s ease-in-out infinite;
+  transform-origin: 0px 10px;
+}
+
+@keyframes align {
+  0%,
+  100% {
+    transform: rotate(-35deg);
+  }
+  60%,
+  85% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .follower {
+    animation: none;
+  }
+}

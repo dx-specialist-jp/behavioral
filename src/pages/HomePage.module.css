@@ -7,7 +7,7 @@
 
 .heroKicker {
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -102,7 +102,7 @@
 }
 
 .quickNavCount {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-text-muted);
 }

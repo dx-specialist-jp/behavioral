@@ -10,11 +10,16 @@ body {
   padding: 0;
 }
 
+html {
+  /* 16px -> 18pxへ底上げし、本文・ラベル類を含め全体を読みやすくする */
+  font-size: 112.5%;
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
-  line-height: 1.7;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
 

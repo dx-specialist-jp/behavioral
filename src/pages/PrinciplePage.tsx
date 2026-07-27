@@ -64,7 +64,9 @@ export function PrinciplePage() {
         くわしい解説
       </h2>
       {principle.content.explanation.map((paragraph, i) => (
-        <p key={i}>{paragraph}</p>
+        <p key={i} className={styles.explanationText}>
+          {paragraph}
+        </p>
       ))}
       {principle.content.academicSource && (
         <p className={styles.source}>出典: {principle.content.academicSource}</p>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NavMenu } from "./NavMenu";
 import styles from "./Header.module.css";
 
 export function Header() {
@@ -14,9 +15,12 @@ export function Header() {
             />
             <rect x="19" y="35" width="10" height="3" rx="1.5" fill="#f2ead9" />
           </svg>
-          <span className={styles.brandText}>くせラボ</span>
+          <span className={styles.brandText}>行動経済学大全</span>
         </Link>
-        <span className={styles.tagline}>行動経済学を、体験して学ぶ</span>
+        <div className={styles.right}>
+          <span className={styles.tagline}>体験しながら学ぶ、くせラボ</span>
+          <NavMenu />
+        </div>
       </div>
     </header>
   );

@@ -39,6 +39,12 @@
   letter-spacing: 0.02em;
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .tagline {
   display: none;
   font-size: 0.78rem;

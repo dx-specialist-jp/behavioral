@@ -42,6 +42,8 @@ export interface PrincipleContent {
   examples: string[];
   /** 一言でのまとめ・対策のヒント */
   takeaway: string;
+  /** 提唱・実証した研究者と発表年、出典（例: "Tversky & Kahneman (1974)『Judgment under Uncertainty』"）。裏取りできたもののみ記載。 */
+  academicSource?: string;
 }
 
 export interface PrincipleMeta {

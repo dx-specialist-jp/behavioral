@@ -2,12 +2,13 @@ import { useEffect } from "react";
 import type { CSSProperties } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { CATEGORY_HUES, CATEGORY_LABELS } from "../principles/types";
-import { CATEGORY_ILLUSTRATIONS } from "../principles/categoryIllustrations";
 import { HEADING_ILLUSTRATIONS } from "../principles/headingIllustrations";
+import { getPrincipleIllustration } from "../principles/principleIllustrations";
 import { getAdjacentPrinciples, getPrincipleBySlug } from "../principles/registry";
 import { IllustrationFrame } from "../components/ui/IllustrationFrame";
 import { PrevNextNav } from "../components/PrevNextNav";
 import { useVisitedPrinciples } from "../hooks/useVisitedPrinciples";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import styles from "./PrinciplePage.module.css";
 
 export function PrinciplePage() {
@@ -18,6 +19,8 @@ export function PrinciplePage() {
   useEffect(() => {
     if (principle) markVisited(principle.slug);
   }, [principle, markVisited]);
+
+  useDocumentTitle(principle ? `${principle.title} | 行動経済学大全` : "行動経済学大全");
 
   if (!principle) {
     return <Navigate to="/404" replace />;
@@ -63,6 +66,9 @@ export function PrinciplePage() {
       {principle.content.explanation.map((paragraph, i) => (
         <p key={i}>{paragraph}</p>
       ))}
+      {principle.content.academicSource && (
+        <p className={styles.source}>出典: {principle.content.academicSource}</p>
+      )}
 
       <h2 className={styles.heading}>
         <img src={HEADING_ILLUSTRATIONS.examples.src} alt="" className={styles.headingIcon} loading="lazy" />
@@ -77,8 +83,8 @@ export function PrinciplePage() {
       <div className={styles.takeaway}>
         <img
           className={styles.takeawayImage}
-          src={CATEGORY_ILLUSTRATIONS[principle.category].src}
-          alt={CATEGORY_ILLUSTRATIONS[principle.category].alt}
+          src={getPrincipleIllustration(principle.slug, principle.category).src}
+          alt=""
           loading="lazy"
         />
         <div>

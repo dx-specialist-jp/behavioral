@@ -1,0 +1,74 @@
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-4) var(--space-6);
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: var(--space-3);
+}
+
+.breadcrumb:hover {
+  color: var(--color-text);
+}
+
+.title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin: 0 0 var(--space-3);
+}
+
+.lead {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-5);
+}
+
+.heading {
+  font-size: 1.15rem;
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.item {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.itemTitle {
+  margin: 0 0 4px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.itemAuthor {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.itemNote {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.itemLink {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--color-focus);
+}

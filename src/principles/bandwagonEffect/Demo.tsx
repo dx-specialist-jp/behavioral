@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { DemoProps } from "../types";
 import { DemoButton, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 
@@ -12,7 +12,7 @@ export function Demo({ accentHue }: DemoProps) {
   const [tick, setTick] = useState(0);
   const [joined, setJoined] = useState<"A" | "B" | null>(null);
   const [joinTick, setJoinTick] = useState<number | null>(null);
-  const initialLeader = useRef<"A" | "B">(counts.a >= counts.b ? "A" : "B");
+  const [joinLeader, setJoinLeader] = useState<"A" | "B" | null>(null);
 
   useEffect(() => {
     if (tick >= MAX_TICKS) return;
@@ -85,6 +85,7 @@ export function Demo({ accentHue }: DemoProps) {
             onClick={() => {
               setJoined("A");
               setJoinTick(tick);
+              setJoinLeader(counts.a >= counts.b ? "A" : "B");
             }}
           >
             フレーバーAに投票する
@@ -93,6 +94,7 @@ export function Demo({ accentHue }: DemoProps) {
             onClick={() => {
               setJoined("B");
               setJoinTick(tick);
+              setJoinLeader(counts.a >= counts.b ? "A" : "B");
             }}
           >
             フレーバーBに投票する
@@ -107,7 +109,7 @@ export function Demo({ accentHue }: DemoProps) {
           <p style={{ margin: "0 0 8px" }}>
             最終結果: フレーバーA {counts.a}人({pctA}%) ／ フレーバーB {counts.b}人({pctB}%)。あなたが投票したのは
             {joinTick !== null ? `${joinTick + 1}回目の更新時点` : ""}で、その時点で優勢だったのは「フレーバー
-            {initialLeader.current}」でした。
+            {joinLeader}」でした。
           </p>
           <DemoHint>
             2つのフレーバーの中身にそもそも違いはなく、最初の差はほんの1票分のランダムな偶然でした。それでも「今、多い方にさらに票が集まりやすい」という単純なルールを繰り返しただけで、差はどんどん拡大していきましたね。これがバンドワゴン効果です。人気そのものが人気を呼ぶ自己強化のループは、内容の優劣とは無関係に、ちょっとした初期の勢いだけで大勢を決めてしまうことがあります。

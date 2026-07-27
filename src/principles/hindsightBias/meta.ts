@@ -23,6 +23,6 @@ export const meta: PrincipleMeta = {
     takeaway:
       "結果を知った後に「昔から分かっていた」と感じたら、当時実際に記録した予測やメモを見返し、本当にそう思っていたか確認する習慣を持ちましょう。",
     academicSource:
-      "Fischhoff, B. (1975). \"Hindsight ≠ Foresight: The Effect of Outcome Knowledge on Judgment Under Uncertainty.\" Journal of Experimental Psychology: Human Perception and Performance, 1(3), 288–299.",
+      "Fischhoff, B. & Beyth, R. (1975). \"I Knew It Would Happen: Remembered Probabilities of Once-Future Things.\" Organizational Behavior and Human Performance, 13(1), 1–16.",
   },
 };

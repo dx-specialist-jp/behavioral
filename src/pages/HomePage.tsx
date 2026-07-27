@@ -22,9 +22,9 @@ function categoryAnchorId(category: PrincipleCategory) {
 }
 
 /**
- * HashRouterは "#" 以降をルートパスとして解釈するため、素の <a href="#id"> の
- * デフォルト遷移に任せると location.hash が書き換わり、存在しないルートとして
- * 404ページに飛んでしまう。preventDefaultしてscrollIntoViewで代替する。
+ * 素の <a href="#id"> のデフォルト遷移に任せるとURLのハッシュが書き換わってしまう
+ * ため、preventDefaultしてscrollIntoViewで代替し、URLを変えずに滑らかにスクロール
+ * させる。
  */
 function handleCategoryNavClick(event: MouseEvent<HTMLAnchorElement>, id: string) {
   event.preventDefault();

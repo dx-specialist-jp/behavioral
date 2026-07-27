@@ -60,17 +60,21 @@ export function Demo({ accentHue }: DemoProps) {
           <DemoPrompt>
             さて、あなたの発言の番です。先ほど個人的にリスクだと思った項目のうち、実際にこの場で「懸念点として」声に出すものを選んでください。
           </DemoPrompt>
-          <DemoChoices>
-            {RISKS.map((r) => (
-              <DemoButton
-                key={r.id}
-                selected={voicedPicks.includes(r.id)}
-                onClick={() => toggle(voicedPicks, setVoicedPicks, r.id)}
-              >
-                {r.label}
-              </DemoButton>
-            ))}
-          </DemoChoices>
+          {privatePicks.length > 0 ? (
+            <DemoChoices>
+              {RISKS.filter((r) => privatePicks.includes(r.id)).map((r) => (
+                <DemoButton
+                  key={r.id}
+                  selected={voicedPicks.includes(r.id)}
+                  onClick={() => toggle(voicedPicks, setVoicedPicks, r.id)}
+                >
+                  {r.label}
+                </DemoButton>
+              ))}
+            </DemoChoices>
+          ) : (
+            <DemoPrompt>（先ほどリスクだと思った項目はありませんでした）</DemoPrompt>
+          )}
           <DemoButton variant="primary" onClick={() => setStage("done")}>
             発言を確定する
           </DemoButton>

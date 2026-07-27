@@ -8,7 +8,7 @@ https://dx-specialist-jp.github.io/behavioral/
 
 - React 19 + TypeScript
 - Vite 8
-- react-router-dom(HashRouter)
+- react-router-dom(BrowserRouter)
 - CSS Modules
 
 ## 開発
@@ -31,4 +31,4 @@ npm run preview  # ビルド結果のプレビュー
 
 ## 参考文献
 
-各原理ページの解説は、相良奈美香『行動経済学が最強の学問である』（SBクリエイティブ、2023年）や、Kahneman・Tversky・Thaler・Cialdini・Arielyらの古典的な研究をもとに、独自に噛み砕いて執筆しています。詳細はサイト内の[参考文献ページ](https://dx-specialist-jp.github.io/behavioral/#/references)を参照してください。
+各原理ページの解説は、相良奈美香『行動経済学が最強の学問である』（SBクリエイティブ、2023年）や、Kahneman・Tversky・Thaler・Cialdini・Arielyらの古典的な研究をもとに、独自に噛み砕いて執筆しています。詳細はサイト内の[参考文献ページ](https://dx-specialist-jp.github.io/behavioral/references)を参照してください。

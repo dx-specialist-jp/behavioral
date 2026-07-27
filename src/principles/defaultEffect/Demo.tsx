@@ -1,13 +1,14 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 import styles from "./Demo.module.css";
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [checked, setChecked] = useState(true);
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <DemoShell accentVar="--accent-default-effect">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>
         あなたは新しい職場の入社手続きをしています。次のチェック項目にはあらかじめチェックが入っています。このまま提出しますか？変更しますか？
       </DemoPrompt>

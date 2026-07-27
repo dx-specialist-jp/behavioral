@@ -1,0 +1,36 @@
+.trophy {
+  animation: pulse 2.6s ease-in-out infinite;
+  transform-origin: 40px 46px;
+}
+
+.cloud {
+  animation: drift 3.4s ease-in-out infinite;
+  transform-origin: 163px 34px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trophy,
+  .cloud {
+    animation: none;
+  }
+}

@@ -1,0 +1,23 @@
+.watcher {
+  animation: glance 4s ease-in-out infinite;
+}
+
+@keyframes glance {
+  0%,
+  85%,
+  100% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(-2px);
+  }
+  95% {
+    transform: translateX(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .watcher {
+    animation: none;
+  }
+}

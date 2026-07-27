@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 import styles from "./Demo.module.css";
 
@@ -9,7 +10,7 @@ const CAFES = [
   { id: "rooftop", name: "屋上カフェ", target: 9 },
 ];
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [choice1, setChoice1] = useState<string | null>(null);
   const [choice2, setChoice2] = useState<string | null>(null);
   const [counts, setCounts] = useState<Record<string, number>>(() =>
@@ -36,7 +37,7 @@ export function Demo() {
   }, [choice1]);
 
   return (
-    <DemoShell accentVar="--accent-social-proof">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>今夜行くならどのカフェが気になりますか？（この時点では他の人の評判は分かりません）</DemoPrompt>
       <div className={styles.list}>
         {CAFES.map((cafe) => (

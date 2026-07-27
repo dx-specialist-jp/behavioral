@@ -4,8 +4,7 @@ export const meta: PrincipleMeta = {
   slug: "confirmation-bias",
   title: "確証バイアス",
   shortSummary: "自分の考えを裏づける情報ばかり、無意識に集めてしまう",
-  category: "decision",
-  accentVar: "--accent-confirmation",
+  category: "decision-heuristics",
   content: {
     definition:
       "自分がすでに持っている考えや仮説を支持する情報ばかりを集め、それに反する情報を無視したり軽視したりしてしまう心理傾向のことです。",

@@ -4,8 +4,7 @@ export const meta: PrincipleMeta = {
   slug: "framing-effect",
   title: "フレーミング効果",
   shortSummary: "同じ内容でも、言い方ひとつで印象が大きく変わる",
-  category: "decision",
-  accentVar: "--accent-framing",
+  category: "decision-heuristics",
   content: {
     definition:
       "同じ情報や選択肢でも、それがどのような言葉や視点（フレーム）で提示されるかによって、受け取り方や判断が変わってしまう心理傾向のことです。",

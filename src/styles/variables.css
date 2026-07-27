@@ -25,19 +25,10 @@
   --space-5: 40px;
   --space-6: 64px;
 
-  /* per-principle accent colors, evenly spaced hues for at-a-glance distinction */
-  --accent-anchoring: hsl(220 62% 42%);
-  --accent-loss-aversion: hsl(10 62% 42%);
-  --accent-status-quo: hsl(130 55% 34%);
-  --accent-social-proof: hsl(40 75% 42%);
-  --accent-framing: hsl(280 55% 48%);
-  --accent-sunk-cost: hsl(310 55% 42%);
-  --accent-present-bias: hsl(190 65% 34%);
-  --accent-confirmation: hsl(70 55% 32%);
-  --accent-mental-accounting: hsl(100 45% 32%);
-  --accent-default-effect: hsl(250 50% 50%);
-  --accent-availability: hsl(340 60% 44%);
-  --accent-endowment: hsl(160 55% 30%);
+  /* categoryごとの色相(hue)はJS側(CATEGORY_HUES)が指定し、
+     ここでは彩度・明度だけを一括管理する */
+  --accent-s: 62%;
+  --accent-l: 40%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,17 +45,7 @@
     --color-focus: #7fa4ff;
     --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
 
-    --accent-anchoring: hsl(220 75% 68%);
-    --accent-loss-aversion: hsl(10 75% 66%);
-    --accent-status-quo: hsl(130 50% 56%);
-    --accent-social-proof: hsl(40 80% 60%);
-    --accent-framing: hsl(280 65% 72%);
-    --accent-sunk-cost: hsl(310 60% 68%);
-    --accent-present-bias: hsl(190 70% 58%);
-    --accent-confirmation: hsl(70 55% 58%);
-    --accent-mental-accounting: hsl(100 45% 56%);
-    --accent-default-effect: hsl(250 70% 76%);
-    --accent-availability: hsl(340 65% 68%);
-    --accent-endowment: hsl(160 50% 54%);
+    --accent-s: 70%;
+    --accent-l: 68%;
   }
 }

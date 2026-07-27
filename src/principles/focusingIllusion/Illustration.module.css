@@ -1,0 +1,20 @@
+.glass {
+  animation: peer 3s ease-in-out infinite;
+  transform-origin: 100px 80px;
+}
+
+@keyframes peer {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.06) rotate(-4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass {
+    animation: none;
+  }
+}

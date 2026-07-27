@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoChoices, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 import styles from "./Demo.module.css";
 
@@ -15,7 +16,7 @@ function PlanCard({ plan, current }: { plan: typeof PLAN_A; current: boolean }) 
   );
 }
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [round1, setRound1] = useState<"stay" | "switch" | null>(null);
   const [round2, setRound2] = useState<"stay" | "switch" | null>(null);
 
@@ -23,7 +24,7 @@ export function Demo() {
   const round2Kept = round2 === "stay"; // B のまま
 
   return (
-    <DemoShell accentVar="--accent-status-quo">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>【1回目】あなたは今プランAを契約中です。プランBに切り替えますか？</DemoPrompt>
       <div className={styles.plans}>
         <PlanCard plan={PLAN_A} current />

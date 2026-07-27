@@ -1,0 +1,20 @@
+.squiggle {
+  animation: pulse 2.4s ease-in-out infinite;
+  transform-origin: 100px 70px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .squiggle {
+    animation: none;
+  }
+}

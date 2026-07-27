@@ -1,0 +1,24 @@
+.stamp {
+  animation: press 2.4s ease-in-out infinite;
+  transform-origin: 112px 96px;
+}
+
+@keyframes press {
+  0%,
+  60%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    transform: scale(1.2) rotate(-8deg);
+  }
+  20% {
+    transform: scale(0.95) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp {
+    animation: none;
+  }
+}

@@ -4,7 +4,20 @@ import { PrincipleCard } from "../components/PrincipleCard";
 import { useVisitedPrinciples } from "../hooks/useVisitedPrinciples";
 import styles from "./HomePage.module.css";
 
-const CATEGORY_ORDER: PrincipleCategory[] = ["decision", "social", "money-time"];
+const CATEGORY_ORDER: PrincipleCategory[] = [
+  "decision-heuristics",
+  "probability-risk",
+  "choice-comparison",
+  "money-time",
+  "social-influence",
+  "group-negotiation",
+  "memory-impression",
+  "self-perception",
+];
+
+function categoryAnchorId(category: PrincipleCategory) {
+  return `category-${category}`;
+}
 
 export function HomePage() {
   const { isVisited, visited } = useVisitedPrinciples();
@@ -21,8 +34,17 @@ export function HomePage() {
         </span>
       </section>
 
+      <nav className={styles.quickNav} aria-label="カテゴリ一覧">
+        {CATEGORY_ORDER.map((category) => (
+          <a key={category} href={`#${categoryAnchorId(category)}`} className={styles.quickNavItem}>
+            {CATEGORY_LABELS[category]}
+            <span className={styles.quickNavCount}>{principlesByCategory(category).length}</span>
+          </a>
+        ))}
+      </nav>
+
       {CATEGORY_ORDER.map((category) => (
-        <section className={styles.section} key={category}>
+        <section className={styles.section} key={category} id={categoryAnchorId(category)}>
           <h2 className={styles.sectionTitle}>{CATEGORY_LABELS[category]}</h2>
           <div className={styles.grid}>
             {principlesByCategory(category).map((principle) => (

@@ -1,0 +1,22 @@
+.halo {
+  animation: glow 2.8s ease-in-out infinite;
+  transform-origin: 100px 38px;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halo {
+    animation: none;
+  }
+}

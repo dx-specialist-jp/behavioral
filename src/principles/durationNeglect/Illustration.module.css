@@ -1,0 +1,21 @@
+.marker {
+  animation: travel 3s ease-in-out infinite;
+}
+
+@keyframes travel {
+  0% {
+    transform: translateX(0);
+  }
+  85% {
+    transform: translateX(132px);
+  }
+  100% {
+    transform: translateX(132px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker {
+    animation: none;
+  }
+}

@@ -1,0 +1,21 @@
+.mover {
+  animation: ride 3.6s ease-in-out infinite;
+  offset-path: path("M20 95 C45 95 50 32 78 32 C106 32 110 95 180 95");
+  offset-rotate: 0deg;
+}
+
+@keyframes ride {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mover {
+    animation: none;
+    offset-distance: 15%;
+  }
+}

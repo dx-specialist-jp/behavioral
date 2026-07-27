@@ -1,0 +1,20 @@
+.pulse {
+  animation: pulse 3s ease-in-out infinite;
+  transform-origin: 112px 80px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}

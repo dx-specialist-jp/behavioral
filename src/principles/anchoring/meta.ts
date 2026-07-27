@@ -4,8 +4,7 @@ export const meta: PrincipleMeta = {
   slug: "anchoring",
   title: "アンカリング効果",
   shortSummary: "最初に見た数字に、その後の判断がずるずる引っ張られる",
-  category: "decision",
-  accentVar: "--accent-anchoring",
+  category: "decision-heuristics",
   content: {
     definition:
       "最初に提示された数字（アンカー）が基準点として頭に残り、その後の見積もりや判断がその数字に近づいてしまう心理傾向のことです。",

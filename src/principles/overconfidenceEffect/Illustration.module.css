@@ -1,0 +1,19 @@
+.gap {
+  animation: fade 2.6s ease-in-out infinite;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gap {
+    animation: none;
+  }
+}

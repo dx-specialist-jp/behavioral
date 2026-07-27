@@ -1,0 +1,28 @@
+.keeper {
+  animation: dive 2.8s ease-in-out infinite;
+  transform-origin: 100px 55px;
+}
+
+@keyframes dive {
+  0%,
+  15% {
+    transform: translateX(0) rotate(0deg);
+  }
+  35%,
+  50% {
+    transform: translateX(-26px) rotate(-25deg);
+  }
+  65%,
+  85% {
+    transform: translateX(26px) rotate(25deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keeper {
+    animation: none;
+  }
+}

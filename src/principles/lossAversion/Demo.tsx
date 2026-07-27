@@ -1,16 +1,17 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoChoices, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 
 type Choice = "sure" | "gamble";
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [gainChoice, setGainChoice] = useState<Choice | null>(null);
   const [lossChoice, setLossChoice] = useState<Choice | null>(null);
 
   const bothAnswered = gainChoice !== null && lossChoice !== null;
 
   return (
-    <DemoShell accentVar="--accent-loss-aversion">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>【場面A】次のどちらを選びますか？</DemoPrompt>
       <DemoChoices>
         <DemoButton selected={gainChoice === "sure"} onClick={() => setGainChoice("sure")}>

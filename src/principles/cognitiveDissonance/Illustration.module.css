@@ -1,0 +1,22 @@
+.bolt {
+  animation: flicker 1.6s ease-in-out infinite;
+  transform-origin: 100px 70px;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bolt {
+    animation: none;
+  }
+}

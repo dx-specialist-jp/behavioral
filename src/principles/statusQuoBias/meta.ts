@@ -4,8 +4,7 @@ export const meta: PrincipleMeta = {
   slug: "status-quo-bias",
   title: "現状維持バイアス",
   shortSummary: "変えた方が得でも、つい「今のまま」を選んでしまう",
-  category: "social",
-  accentVar: "--accent-status-quo",
+  category: "choice-comparison",
   content: {
     definition:
       "今の状態を変えることを避け、たとえ変えたほうが得だとしても現状維持を選んでしまう心理傾向のことです。",

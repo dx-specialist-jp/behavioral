@@ -1,0 +1,20 @@
+.self {
+  animation: bob 2.8s ease-in-out infinite;
+  transform-origin: 130px 40px;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .self {
+    animation: none;
+  }
+}

@@ -1,0 +1,38 @@
+.up {
+  animation: rise 2s ease-in-out infinite;
+}
+
+.down {
+  animation: fall 2s ease-in-out infinite;
+}
+
+@keyframes rise {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes fall {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.7;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .up,
+  .down {
+    animation: none;
+  }
+}

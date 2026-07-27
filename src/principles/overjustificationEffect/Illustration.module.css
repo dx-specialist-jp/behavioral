@@ -1,0 +1,36 @@
+.heart {
+  animation: pulse 1.8s ease-in-out infinite;
+  transform-origin: 55px 67px;
+}
+
+.coin {
+  animation: bounce 2.2s ease-in-out infinite;
+  transform-origin: 150px 63px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart,
+  .coin {
+    animation: none;
+  }
+}

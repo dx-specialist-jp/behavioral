@@ -1,0 +1,20 @@
+.barsRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 90px;
+  margin-bottom: var(--space-3);
+}
+
+.barCol {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.bar {
+  width: 16px;
+  background: var(--accent, var(--color-focus));
+  border-radius: 3px 3px 0 0;
+  transition: height 0.2s ease;
+}

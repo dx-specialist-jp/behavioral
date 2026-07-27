@@ -1,0 +1,29 @@
+.barsRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 110px;
+  margin-bottom: var(--space-3);
+}
+
+.barCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  height: 100%;
+}
+
+.barValue {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.bar {
+  width: 22px;
+  background: var(--accent, var(--color-focus));
+  border-radius: 4px 4px 0 0;
+  transition: height 0.2s ease;
+}

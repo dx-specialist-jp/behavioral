@@ -1,0 +1,31 @@
+.figure {
+  animation: rise 3s ease-in-out infinite;
+  transform-origin: 100px 100px;
+}
+
+.bow {
+  animation: dash 4s linear infinite;
+}
+
+@keyframes rise {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figure,
+  .bow {
+    animation: none;
+  }
+}

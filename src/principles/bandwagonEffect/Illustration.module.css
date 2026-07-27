@@ -1,0 +1,43 @@
+.chaser {
+  animation: chase 2.4s ease-in-out infinite;
+}
+
+.rider1,
+.rider2 {
+  animation: wobble 1.8s ease-in-out infinite;
+  transform-origin: 60px 70px;
+}
+
+.rider2 {
+  animation-delay: 0.3s;
+}
+
+@keyframes chase {
+  0% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-46px);
+  }
+  100% {
+    transform: translateX(-46px);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chaser,
+  .rider1,
+  .rider2 {
+    animation: none;
+  }
+}

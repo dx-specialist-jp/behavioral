@@ -1,0 +1,18 @@
+.arrow {
+  animation: flow 2.4s linear infinite;
+}
+
+@keyframes flow {
+  0% {
+    stroke-dashoffset: 16;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow {
+    animation: none;
+  }
+}

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import type { CSSProperties } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { CATEGORY_LABELS } from "../principles/types";
+import { CATEGORY_HUES, CATEGORY_LABELS } from "../principles/types";
 import { getAdjacentPrinciples, getPrincipleBySlug } from "../principles/registry";
 import { IllustrationFrame } from "../components/ui/IllustrationFrame";
 import { PrevNextNav } from "../components/PrevNextNav";
@@ -22,7 +22,8 @@ export function PrinciplePage() {
   }
 
   const { prev, next } = getAdjacentPrinciples(principle.slug);
-  const style = { "--accent": `var(${principle.accentVar})` } as CSSProperties;
+  const accentHue = CATEGORY_HUES[principle.category];
+  const style = { "--accent": `hsl(${accentHue} var(--accent-s) var(--accent-l))` } as CSSProperties;
   const Illustration = principle.Illustration;
   const Demo = principle.Demo;
 
@@ -36,14 +37,14 @@ export function PrinciplePage() {
       </div>
       <h1 className={styles.title}>{principle.title}</h1>
 
-      <IllustrationFrame accentVar={principle.accentVar} label={`${principle.title}のイメージ図`}>
+      <IllustrationFrame accentHue={accentHue} label={`${principle.title}のイメージ図`}>
         <Illustration />
       </IllustrationFrame>
 
       <p className={styles.definition}>{principle.content.definition}</p>
 
       <h2 className={styles.heading}>やってみよう</h2>
-      <Demo />
+      <Demo accentHue={accentHue} />
 
       <h2 className={styles.heading}>くわしい解説</h2>
       {principle.content.explanation.map((paragraph, i) => (

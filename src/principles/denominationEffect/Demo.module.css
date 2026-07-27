@@ -1,0 +1,21 @@
+.visual {
+  margin-bottom: var(--space-3);
+}
+
+.bill {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--accent, var(--color-focus));
+  color: #fff;
+  font-weight: 700;
+}
+
+.coinsRow {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-text-muted);
+  color: #fff;
+  font-weight: 700;
+}

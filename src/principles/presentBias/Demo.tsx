@@ -1,14 +1,15 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoChoices, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 
 type Choice = "sooner" | "later";
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [near, setNear] = useState<Choice | null>(null);
   const [far, setFar] = useState<Choice | null>(null);
 
   return (
-    <DemoShell accentVar="--accent-present-bias">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>【質問1】どちらを選びますか？</DemoPrompt>
       <DemoChoices>
         <DemoButton selected={near === "sooner"} onClick={() => setNear("sooner")}>

@@ -1,0 +1,20 @@
+.nextCoin {
+  animation: pulse 1.8s ease-in-out infinite;
+  transform-origin: 182px 66px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nextCoin {
+    animation: none;
+  }
+}

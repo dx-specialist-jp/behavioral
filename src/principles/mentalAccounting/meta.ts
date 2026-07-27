@@ -5,7 +5,6 @@ export const meta: PrincipleMeta = {
   title: "心理的会計",
   shortSummary: "お金の出所によって、同じ金額でも使い方が変わる",
   category: "money-time",
-  accentVar: "--accent-mental-accounting",
   content: {
     definition:
       "お金には本来「色」がなく、どこから来たお金でも価値は同じはずなのに、出所や使い道ごとに心の中で別々の財布（メンタルアカウント）に分けて扱ってしまう心理傾向のことです。",

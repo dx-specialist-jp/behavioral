@@ -1,0 +1,41 @@
+.bigShape {
+  animation: bounceBack 2.6s ease-in-out infinite;
+  transform-origin: 51px 57px;
+}
+
+.smallShape {
+  animation: slideIn 2.6s ease-in-out infinite;
+}
+
+@keyframes bounceBack {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(18px);
+  }
+  55% {
+    transform: translateX(-4px);
+  }
+}
+
+@keyframes slideIn {
+  0%,
+  50% {
+    transform: translateX(20px);
+    opacity: 0.4;
+  }
+  80%,
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bigShape,
+  .smallShape {
+    animation: none;
+  }
+}

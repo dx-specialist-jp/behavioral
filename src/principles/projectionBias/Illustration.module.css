@@ -1,0 +1,22 @@
+.pulse {
+  animation: reach 2.6s ease-in-out infinite;
+}
+
+@keyframes reach {
+  0%,
+  100% {
+    opacity: 0.4;
+    stroke-dashoffset: 10;
+  }
+  50% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+    opacity: 0.85;
+  }
+}

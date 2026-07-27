@@ -1,0 +1,22 @@
+.callout {
+  animation: ring 2.4s ease-in-out infinite;
+  transform-origin: 140px 66px;
+}
+
+@keyframes ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0.15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .callout {
+    animation: none;
+  }
+}

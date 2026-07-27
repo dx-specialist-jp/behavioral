@@ -1,0 +1,22 @@
+.badge {
+  animation: glow 2.2s ease-in-out infinite;
+  transform-origin: 171px 100px;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    animation: none;
+  }
+}

@@ -1,0 +1,20 @@
+.lens {
+  animation: pulse 2.6s ease-in-out infinite;
+  transform-origin: 100px 60px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lens {
+    animation: none;
+  }
+}

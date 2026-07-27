@@ -1,0 +1,21 @@
+.heart {
+  animation: beat 1.6s ease-in-out infinite;
+  transform-origin: 92px 47px;
+  transform-box: fill-box;
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart {
+    animation: none;
+  }
+}

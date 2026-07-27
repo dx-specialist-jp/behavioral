@@ -1,0 +1,25 @@
+.ball {
+  animation: arc 2.2s ease-in-out infinite;
+  transform-origin: 70px 95px;
+}
+
+@keyframes arc {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(30px, -45px);
+  }
+  70% {
+    transform: translate(60px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ball {
+    animation: none;
+  }
+}

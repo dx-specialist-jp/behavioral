@@ -4,8 +4,7 @@ export const meta: PrincipleMeta = {
   slug: "default-effect",
   title: "デフォルト効果",
   shortSummary: "最初から選ばれている選択肢を、そのまま受け入れやすい",
-  category: "social",
-  accentVar: "--accent-default-effect",
+  category: "choice-comparison",
   content: {
     definition:
       "選択肢の中であらかじめ設定されている「初期設定（デフォルト）」を、多くの人がそのまま受け入れてしまう心理傾向のことです。",

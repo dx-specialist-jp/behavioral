@@ -5,7 +5,6 @@ export const meta: PrincipleMeta = {
   title: "現在バイアス（双曲割引）",
   shortSummary: "遠い将来のことより、目先の快楽をつい優先してしまう",
   category: "money-time",
-  accentVar: "--accent-present-bias",
   content: {
     definition:
       "将来手に入る大きな価値より、目の前にある小さな価値を過大に評価してしまい、時間が経つほど「待てば得だった」と分かる選択を、今この瞬間だけは選べなくなる心理傾向のことです。",

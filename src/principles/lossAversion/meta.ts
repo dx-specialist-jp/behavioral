@@ -5,7 +5,6 @@ export const meta: PrincipleMeta = {
   title: "損失回避",
   shortSummary: "同じ金額でも、失う痛みは得る喜びの2倍以上重く感じる",
   category: "money-time",
-  accentVar: "--accent-loss-aversion",
   content: {
     definition:
       "同じ大きさの「得」と「損」を比べたとき、損をする痛みのほうを得をする喜びより大きく感じてしまう心理傾向のことです。",

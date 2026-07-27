@@ -1,0 +1,23 @@
+.glass {
+  animation: seek 3.4s ease-in-out infinite;
+}
+
+@keyframes seek {
+  0%,
+  20% {
+    transform: translate(0, 0);
+  }
+  50%,
+  70% {
+    transform: translate(-87px, -34px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass {
+    animation: none;
+  }
+}

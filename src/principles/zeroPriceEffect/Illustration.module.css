@@ -1,0 +1,35 @@
+.tag {
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: 46px 77px;
+}
+
+.converge {
+  animation: drift 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-14px, 22px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tag,
+  .converge {
+    animation: none;
+  }
+}

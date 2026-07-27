@@ -1,0 +1,22 @@
+.thought {
+  animation: pulse 2.6s ease-in-out infinite;
+  transform-origin: 45px 60px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thought {
+    animation: none;
+  }
+}

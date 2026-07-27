@@ -2,13 +2,13 @@ import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
 import styles from "./DemoUI.module.css";
 
 interface DemoShellProps {
-  accentVar: string;
+  accentHue: number;
   children: ReactNode;
 }
 
 /** インタラクティブデモの共通の枠。原理ごとのアクセントカラーを上部バーに反映する。 */
-export function DemoShell({ accentVar, children }: DemoShellProps) {
-  const style = { "--accent": `var(${accentVar})` } as CSSProperties;
+export function DemoShell({ accentHue, children }: DemoShellProps) {
+  const style = { "--accent": `hsl(${accentHue} var(--accent-s) var(--accent-l))` } as CSSProperties;
   return (
     <div className={styles.shell} style={style}>
       <div className={styles.bar} />

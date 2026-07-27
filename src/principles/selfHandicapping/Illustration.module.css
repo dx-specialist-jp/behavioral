@@ -1,0 +1,35 @@
+.hand {
+  animation: tick 2.4s steps(4) infinite;
+  transform-origin: 150px 34px;
+}
+
+.phone {
+  animation: glow 2s ease-in-out infinite;
+  transform-origin: 63px 96px;
+}
+
+@keyframes tick {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hand,
+  .phone {
+    animation: none;
+  }
+}

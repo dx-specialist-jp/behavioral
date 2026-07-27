@@ -1,0 +1,19 @@
+.arrow {
+  animation: flow 1.6s ease-in-out infinite;
+}
+
+@keyframes flow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow {
+    animation: none;
+  }
+}

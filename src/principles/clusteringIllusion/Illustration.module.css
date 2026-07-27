@@ -1,0 +1,22 @@
+.ring {
+  animation: ring 2.4s ease-in-out infinite;
+  transform-origin: 104px 104px;
+}
+
+@keyframes ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+}

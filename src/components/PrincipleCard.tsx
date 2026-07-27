@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import type { Principle } from "../principles/types";
+import { CATEGORY_HUES, type Principle } from "../principles/types";
 import styles from "./PrincipleCard.module.css";
 
 interface PrincipleCardProps {
@@ -9,7 +9,8 @@ interface PrincipleCardProps {
 }
 
 export function PrincipleCard({ principle, visited }: PrincipleCardProps) {
-  const style = { "--accent": `var(${principle.accentVar})` } as CSSProperties;
+  const hue = CATEGORY_HUES[principle.category];
+  const style = { "--accent": `hsl(${hue} var(--accent-s) var(--accent-l))` } as CSSProperties;
   return (
     <Link to={`/principles/${principle.slug}`} className={styles.card} style={style}>
       {visited && (

@@ -1,0 +1,20 @@
+.pick {
+  animation: bob 2.4s ease-in-out infinite;
+  transform-origin: 100px 122px;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pick {
+    animation: none;
+  }
+}

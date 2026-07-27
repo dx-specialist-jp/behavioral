@@ -1,0 +1,50 @@
+.wrench {
+  animation: turn 2.6s ease-in-out infinite;
+  transform-origin: 140px 70px;
+}
+
+.screw {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.shelfBuilding {
+  animation: draw 2.4s ease-in-out infinite;
+}
+
+@keyframes turn {
+  0%,
+  100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes draw {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wrench,
+  .screw,
+  .shelfBuilding {
+    animation: none;
+  }
+}

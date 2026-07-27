@@ -1,0 +1,21 @@
+.walker,
+.leader {
+  animation: sway 2.4s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .walker,
+  .leader {
+    animation: none;
+  }
+}

@@ -1,0 +1,20 @@
+.handPress {
+  animation: press 1.6s ease-in-out infinite;
+  transform-origin: 100px 112px;
+}
+
+@keyframes press {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .handPress {
+    animation: none;
+  }
+}

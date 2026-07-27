@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoChoices, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 
 interface RoundDef {
@@ -28,7 +29,7 @@ const ROUNDS: RoundDef[] = [
   },
 ];
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [answers, setAnswers] = useState<("A" | "B" | null)[]>([null, null]);
   const currentIndex = answers.findIndex((a) => a === null);
   const finished = currentIndex === -1;
@@ -40,7 +41,7 @@ export function Demo() {
   const correctCount = answers.filter((a, i) => a === ROUNDS[i].correct).length;
 
   return (
-    <DemoShell accentVar="--accent-availability">
+    <DemoShell accentHue={accentHue}>
       {!finished && (
         <>
           <DemoPrompt>{ROUNDS[currentIndex].prompt}</DemoPrompt>

@@ -4,8 +4,7 @@ export const meta: PrincipleMeta = {
   slug: "social-proof",
   title: "社会的証明",
   shortSummary: "「みんなが選んでいる」ものが、正しく見えてしまう",
-  category: "social",
-  accentVar: "--accent-social-proof",
+  category: "social-influence",
   content: {
     definition:
       "自分でどう判断すべきか分からないとき、他の人の行動や選択を「正解」の手がかりとして真似してしまう心理傾向のことです。",

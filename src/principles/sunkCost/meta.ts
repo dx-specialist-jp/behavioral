@@ -5,7 +5,6 @@ export const meta: PrincipleMeta = {
   title: "サンクコスト効果",
   shortSummary: "すでに使ったお金や時間が惜しくて、やめられない",
   category: "money-time",
-  accentVar: "--accent-sunk-cost",
   content: {
     definition:
       "すでに投じてしまい、もう取り戻せないお金・時間・労力（サンクコスト＝埋没費用）が惜しくて、本来やめるべき物事を続けてしまう心理傾向のことです。",

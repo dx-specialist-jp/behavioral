@@ -1,0 +1,22 @@
+.fill {
+  animation: expand 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleY(0.15);
+  }
+  70%,
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    animation: none;
+    transform: scaleY(1);
+  }
+}

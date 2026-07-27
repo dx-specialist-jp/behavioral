@@ -1,0 +1,31 @@
+.gift {
+  animation: pulse 2.6s ease-in-out infinite;
+  transform-origin: 100px 68px;
+}
+
+.arrow {
+  animation: flow 3.2s linear infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gift,
+  .arrow {
+    animation: none;
+  }
+}

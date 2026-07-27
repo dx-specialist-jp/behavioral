@@ -1,0 +1,40 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-2) 0;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+}
+
+.barLabel {
+  width: 180px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.barTrack {
+  flex: 1;
+  height: 14px;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--accent, var(--color-focus));
+  border-radius: 999px;
+}

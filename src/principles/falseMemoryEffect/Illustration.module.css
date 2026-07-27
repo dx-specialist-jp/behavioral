@@ -1,0 +1,20 @@
+.pop {
+  animation: pop 2s ease-in-out infinite;
+  transform-origin: 100px 89px;
+}
+
+@keyframes pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop {
+    animation: none;
+  }
+}

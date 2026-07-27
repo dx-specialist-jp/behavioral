@@ -28,10 +28,49 @@
   border-radius: 999px;
 }
 
+.quickNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  max-width: 880px;
+  margin: 0 auto var(--space-5);
+  padding: 0 var(--space-4);
+}
+
+.quickNavItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease;
+}
+
+.quickNavItem:hover {
+  border-color: var(--color-border-strong);
+}
+
+.quickNavCount {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+
 .section {
   max-width: 880px;
   margin: 0 auto;
   padding: 0 var(--space-4) var(--space-5);
+  scroll-margin-top: var(--space-4);
 }
 
 .sectionTitle {

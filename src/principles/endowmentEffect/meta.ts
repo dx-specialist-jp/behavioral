@@ -5,7 +5,6 @@ export const meta: PrincipleMeta = {
   title: "保有効果",
   shortSummary: "自分が持っている物には、実際以上の価値を感じてしまう",
   category: "money-time",
-  accentVar: "--accent-endowment",
   content: {
     definition:
       "自分がすでに所有している物に対して、まだ持っていない場合よりも高い価値を感じてしまう心理傾向のことです。",

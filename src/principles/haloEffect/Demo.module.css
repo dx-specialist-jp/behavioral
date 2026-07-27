@@ -1,0 +1,23 @@
+.card {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-3);
+  background: var(--color-bg);
+}
+
+.cue {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  border-left: 3px solid var(--accent, var(--color-focus));
+  padding-left: var(--space-2);
+  margin: var(--space-2) 0 0;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.9rem;
+}

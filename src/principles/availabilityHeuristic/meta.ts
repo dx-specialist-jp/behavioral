@@ -4,8 +4,7 @@ export const meta: PrincipleMeta = {
   slug: "availability-heuristic",
   title: "利用可能性ヒューリスティック",
   shortSummary: "思い出しやすい出来事ほど、実際に起こりやすいと錯覚する",
-  category: "decision",
-  accentVar: "--accent-availability",
+  category: "decision-heuristics",
   content: {
     definition:
       "頭に思い浮かびやすい（＝記憶から取り出しやすい）出来事ほど、実際の発生頻度も高いと錯覚してしまう心理傾向のことです。",

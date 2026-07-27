@@ -1,13 +1,14 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoHint, DemoPrompt, DemoResult, DemoShell, DemoSlider } from "../../components/ui/DemoUI";
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [stage, setStage] = useState<0 | 1 | 2>(0);
   const [scoreA, setScoreA] = useState(5);
   const [scoreB, setScoreB] = useState(5);
 
   return (
-    <DemoShell accentVar="--accent-framing">
+    <DemoShell accentHue={accentHue}>
       {stage === 0 && (
         <>
           <DemoPrompt>

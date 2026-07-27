@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoChoices, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 
 const OPTIONS = [
@@ -7,14 +8,14 @@ const OPTIONS = [
   { id: "treat", label: "外食や娯楽にぱっと使う" },
 ];
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [salaryChoice, setSalaryChoice] = useState<string | null>(null);
   const [bonusChoice, setBonusChoice] = useState<string | null>(null);
 
   const label = (id: string | null) => OPTIONS.find((o) => o.id === id)?.label ?? "";
 
   return (
-    <DemoShell accentVar="--accent-mental-accounting">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>毎月の給料が、思ったより3万円多く振り込まれていました。何に使いますか？</DemoPrompt>
       <DemoChoices>
         {OPTIONS.map((opt) => (

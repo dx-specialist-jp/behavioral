@@ -1,10 +1,11 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 import styles from "./Demo.module.css";
 
 const CARDS = ["E", "K", "4", "7"];
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [selected, setSelected] = useState<string[]>([]);
   const [checked, setChecked] = useState(false);
 
@@ -17,7 +18,7 @@ export function Demo() {
   const pickedCorrect = selected.includes("E") && selected.includes("7") && selected.length === 2;
 
   return (
-    <DemoShell accentVar="--accent-confirmation">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>
         ルール：「片面が母音なら、もう片面は偶数である」。このルールが正しいかを確かめるには、どのカードの裏を確認する必要がありますか？めくりたいカードをすべて選んでください。
       </DemoPrompt>

@@ -1,0 +1,39 @@
+.shield {
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: 120px 72px;
+}
+
+.arrow {
+  animation: jab 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes jab {
+  0%,
+  75%,
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(10px);
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shield,
+  .arrow {
+    animation: none;
+  }
+}

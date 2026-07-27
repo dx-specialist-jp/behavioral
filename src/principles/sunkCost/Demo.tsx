@@ -1,14 +1,15 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import { DemoButton, DemoChoices, DemoHint, DemoPrompt, DemoResult, DemoShell } from "../../components/ui/DemoUI";
 
 type Choice = "continue" | "stop";
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [round1, setRound1] = useState<Choice | null>(null);
   const [round2, setRound2] = useState<Choice | null>(null);
 
   return (
-    <DemoShell accentVar="--accent-sunk-cost">
+    <DemoShell accentHue={accentHue}>
       <DemoPrompt>
         【1回目】新規事業にすでに30万円投資しました。あと100万円投資すれば、成功確率は50%、成功すれば250万円のリターンです。追加投資しますか？
       </DemoPrompt>

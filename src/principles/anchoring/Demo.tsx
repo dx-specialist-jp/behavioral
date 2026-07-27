@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { DemoProps } from "../types";
 import {
   DemoButton,
   DemoHint,
@@ -17,7 +18,7 @@ function randomAnchor() {
   return Math.random() < 0.5 ? Math.floor(Math.random() * 15) + 1 : Math.floor(Math.random() * 20) + 70;
 }
 
-export function Demo() {
+export function Demo({ accentHue }: DemoProps) {
   const [anchor, setAnchor] = useState<number | null>(null);
   const [guess, setGuess] = useState(50);
   const [rounds, setRounds] = useState<Round[]>([]);
@@ -34,7 +35,7 @@ export function Demo() {
   };
 
   return (
-    <DemoShell accentVar="--accent-anchoring">
+    <DemoShell accentHue={accentHue}>
       {anchor === null && rounds.length === 0 && (
         <>
           <DemoPrompt>ボタンを押して、ランダムな数字を1つ引いてみましょう。</DemoPrompt>

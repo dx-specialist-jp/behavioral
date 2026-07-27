@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import type { CSSProperties } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { CATEGORY_HUES, CATEGORY_LABELS } from "../principles/types";
+import { CATEGORY_ILLUSTRATIONS } from "../principles/categoryIllustrations";
+import { HEADING_ILLUSTRATIONS } from "../principles/headingIllustrations";
 import { getAdjacentPrinciples, getPrincipleBySlug } from "../principles/registry";
 import { IllustrationFrame } from "../components/ui/IllustrationFrame";
 import { PrevNextNav } from "../components/PrevNextNav";
@@ -43,15 +45,29 @@ export function PrinciplePage() {
 
       <p className={styles.definition}>{principle.content.definition}</p>
 
-      <h2 className={styles.heading}>やってみよう</h2>
+      <h2 className={styles.heading}>
+        <img src={HEADING_ILLUSTRATIONS.try.src} alt="" className={styles.headingIcon} loading="lazy" />
+        やってみよう
+      </h2>
       <Demo accentHue={accentHue} />
 
-      <h2 className={styles.heading}>くわしい解説</h2>
+      <h2 className={styles.heading}>
+        <img
+          src={HEADING_ILLUSTRATIONS.explanation.src}
+          alt=""
+          className={styles.headingIcon}
+          loading="lazy"
+        />
+        くわしい解説
+      </h2>
       {principle.content.explanation.map((paragraph, i) => (
         <p key={i}>{paragraph}</p>
       ))}
 
-      <h2 className={styles.heading}>身近な具体例</h2>
+      <h2 className={styles.heading}>
+        <img src={HEADING_ILLUSTRATIONS.examples.src} alt="" className={styles.headingIcon} loading="lazy" />
+        身近な具体例
+      </h2>
       <ul className={styles.examples}>
         {principle.content.examples.map((example, i) => (
           <li key={i}>{example}</li>
@@ -59,8 +75,16 @@ export function PrinciplePage() {
       </ul>
 
       <div className={styles.takeaway}>
-        <p className={styles.takeawayTitle}>まとめ</p>
-        <p style={{ margin: 0 }}>{principle.content.takeaway}</p>
+        <img
+          className={styles.takeawayImage}
+          src={CATEGORY_ILLUSTRATIONS[principle.category].src}
+          alt={CATEGORY_ILLUSTRATIONS[principle.category].alt}
+          loading="lazy"
+        />
+        <div>
+          <p className={styles.takeawayTitle}>まとめ</p>
+          <p style={{ margin: 0 }}>{principle.content.takeaway}</p>
+        </div>
       </div>
 
       <PrevNextNav prev={prev} next={next} />

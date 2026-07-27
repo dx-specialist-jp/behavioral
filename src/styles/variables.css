@@ -1,22 +1,23 @@
 :root {
   color-scheme: light;
 
-  --color-bg: #f7f7fb;
-  --color-surface: #ffffff;
+  --color-bg: #faf7f0;
+  --color-surface: #fffefb;
   --color-surface-raised: #ffffff;
-  --color-text: #1a1a2e;
-  --color-text-muted: #5b5b6f;
-  --color-border: #e3e3ec;
-  --color-border-strong: #cfcfe0;
-  --color-focus: #2f5fd0;
-  --shadow-card: 0 1px 3px rgba(20, 20, 40, 0.08), 0 8px 24px rgba(20, 20, 40, 0.06);
+  --color-text: #221e18;
+  --color-text-muted: #6b6255;
+  --color-border: #e7ddcb;
+  --color-border-strong: #d6c8ac;
+  --color-focus: #7a2331;
+  --shadow-card: 0 1px 2px rgba(40, 30, 15, 0.06), 0 14px 32px -12px rgba(40, 30, 15, 0.18);
 
-  --font-sans: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, -apple-system,
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, -apple-system,
     sans-serif;
+  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
 
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 24px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 6px;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -27,25 +28,31 @@
 
   /* categoryごとの色相(hue)はJS側(CATEGORY_HUES)が指定し、
      ここでは彩度・明度だけを一括管理する */
-  --accent-s: 62%;
-  --accent-l: 40%;
+  --accent-s: 48%;
+  --accent-l: 32%;
+
+  /* アクセント/ミュート背景の上に乗せる文字色。ライトは暗背景なので白、
+     ダークは背景が明るく反転するため、コントラスト確保に地の背景色を使う */
+  --chip-ink: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
 
-    --color-bg: #131320;
-    --color-surface: #1c1c2c;
-    --color-surface-raised: #22223494;
-    --color-text: #eceef5;
-    --color-text-muted: #a3a3ba;
-    --color-border: #2c2c40;
-    --color-border-strong: #3a3a52;
-    --color-focus: #7fa4ff;
-    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --color-bg: #17140e;
+    --color-surface: #201b13;
+    --color-surface-raised: #241f17;
+    --color-text: #f2ead9;
+    --color-text-muted: #b3a690;
+    --color-border: #342c1e;
+    --color-border-strong: #453a27;
+    --color-focus: #e2a2a0;
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.35), 0 16px 36px -12px rgba(0, 0, 0, 0.5);
 
-    --accent-s: 70%;
-    --accent-l: 68%;
+    --accent-s: 55%;
+    --accent-l: 66%;
+
+    --chip-ink: #17140e;
   }
 }

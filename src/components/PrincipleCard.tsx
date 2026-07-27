@@ -18,7 +18,6 @@ export function PrincipleCard({ principle, visited }: PrincipleCardProps) {
           ✓
         </span>
       )}
-      <div className={styles.bar} />
       <h3 className={styles.title}>{principle.title}</h3>
       <p className={styles.summary}>{principle.shortSummary}</p>
     </Link>

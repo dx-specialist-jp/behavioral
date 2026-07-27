@@ -14,7 +14,7 @@
   justify-content: center;
   font-weight: 700;
   font-size: 0.85rem;
-  color: #fff;
+  color: var(--chip-ink, #fff);
 }
 
 .make {

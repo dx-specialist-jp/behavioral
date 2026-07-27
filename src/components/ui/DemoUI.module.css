@@ -54,7 +54,7 @@
   composes: button;
   background: var(--accent, var(--color-focus));
   border-color: var(--accent, var(--color-focus));
-  color: #fff;
+  color: var(--chip-ink, #fff);
 }
 
 .buttonSelected {
@@ -93,6 +93,7 @@
 
 .resultTitle {
   margin: 0 0 6px;
+  font-family: var(--font-serif);
   font-weight: 700;
   color: var(--accent, var(--color-focus));
 }

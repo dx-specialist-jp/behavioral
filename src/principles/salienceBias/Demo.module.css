@@ -9,7 +9,7 @@
 
 .banner {
   background: var(--accent, var(--color-focus));
-  color: #fff;
+  color: var(--chip-ink, #fff);
   font-weight: 700;
   font-size: 1.2rem;
   text-align: center;

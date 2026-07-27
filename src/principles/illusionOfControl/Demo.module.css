@@ -40,6 +40,6 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #fff;
+  color: var(--chip-ink, #fff);
   background: var(--accent, var(--color-focus));
 }

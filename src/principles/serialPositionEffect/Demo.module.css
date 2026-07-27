@@ -60,5 +60,5 @@
 .posRecalled {
   border-color: var(--accent, var(--color-focus));
   background: var(--accent, var(--color-focus));
-  color: #fff;
+  color: var(--chip-ink, #fff);
 }

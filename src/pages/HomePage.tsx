@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { CATEGORY_LABELS, type PrincipleCategory } from "../principles/types";
 import { principlesByCategory, allPrinciples } from "../principles/registry";
 import { PrincipleCard } from "../components/PrincipleCard";
@@ -19,12 +20,23 @@ function categoryAnchorId(category: PrincipleCategory) {
   return `category-${category}`;
 }
 
+/**
+ * HashRouterは "#" 以降をルートパスとして解釈するため、素の <a href="#id"> の
+ * デフォルト遷移に任せると location.hash が書き換わり、存在しないルートとして
+ * 404ページに飛んでしまう。preventDefaultしてscrollIntoViewで代替する。
+ */
+function handleCategoryNavClick(event: MouseEvent<HTMLAnchorElement>, id: string) {
+  event.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export function HomePage() {
   const { isVisited, visited } = useVisitedPrinciples();
 
   return (
     <div>
       <section className={styles.hero}>
+        <span className={styles.heroKicker}>Behavioral Economics Lab</span>
         <h1 className={styles.heroTitle}>くせラボ</h1>
         <p className={styles.heroLead}>
           人はなぜ、いつも「合理的」に選べないのか。行動経済学の原理を1つずつ、イラストと自分で試せるミニ体験で学べるサイトです。読むだけでなく、実際にクリックして自分の中の「くせ」に気づいてみましょう。
@@ -36,7 +48,12 @@ export function HomePage() {
 
       <nav className={styles.quickNav} aria-label="カテゴリ一覧">
         {CATEGORY_ORDER.map((category) => (
-          <a key={category} href={`#${categoryAnchorId(category)}`} className={styles.quickNavItem}>
+          <a
+            key={category}
+            href={`#${categoryAnchorId(category)}`}
+            className={styles.quickNavItem}
+            onClick={(event) => handleCategoryNavClick(event, categoryAnchorId(category))}
+          >
             {CATEGORY_LABELS[category]}
             <span className={styles.quickNavCount}>{principlesByCategory(category).length}</span>
           </a>

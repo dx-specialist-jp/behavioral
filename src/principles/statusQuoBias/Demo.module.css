@@ -22,7 +22,7 @@
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--chip-ink, #fff);
   background: var(--accent, var(--color-focus));
   padding: 2px 8px;
   border-radius: 999px;

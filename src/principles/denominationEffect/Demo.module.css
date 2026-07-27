@@ -7,7 +7,7 @@
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
   background: var(--accent, var(--color-focus));
-  color: #fff;
+  color: var(--chip-ink, #fff);
   font-weight: 700;
 }
 
@@ -16,6 +16,6 @@
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
   background: var(--color-text-muted);
-  color: #fff;
+  color: var(--chip-ink, #fff);
   font-weight: 700;
 }

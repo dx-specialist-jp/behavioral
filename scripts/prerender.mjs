@@ -1,15 +1,24 @@
 // vite build 後に実行し、SNSシェア時のOGPカードがページごとに正しく出るよう、
 // GitHub Pagesがそのまま静的配信できる形で「原理ごとの実ファイル」を書き出す。
 // BrowserRouterなのでクライアント側の遷移はこれまで通りSPAとして動作する。
-import { readFile, writeFile, mkdir, copyFile, readdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, copyFile, readdir, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import ts from "typescript";
 
 const rootDir = fileURLToPath(new URL("..", import.meta.url));
 const distDir = path.join(rootDir, "dist");
 const principlesDir = path.join(rootDir, "src/principles");
 const siteUrl = "https://dx-specialist-jp.github.io/behavioral";
+// CIのNode(20系)はまだ.tsのネイティブ実行に対応していないため、都度JSへ
+// トランスパイルしてから読み込む(ローカルの新しいNodeだけ動く実装は避ける)。
+const tmpDir = await (async () => {
+  const dir = path.join(os.tmpdir(), `prerender-meta-${Date.now()}`);
+  await mkdir(dir, { recursive: true });
+  return dir;
+})();
 
 const CATEGORY_OG_IMAGE = {
   "decision-heuristics": "decision-heuristics.png",
@@ -50,7 +59,13 @@ async function loadPrinciples() {
     if (!entry.isDirectory()) continue;
     const metaPath = path.join(principlesDir, entry.name, "meta.ts");
     if (!existsSync(metaPath)) continue;
-    const mod = await import(pathToFileURL(metaPath).href);
+    const source = await readFile(metaPath, "utf-8");
+    const { outputText } = ts.transpileModule(source, {
+      compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 },
+    });
+    const tmpFile = path.join(tmpDir, `${entry.name}.mjs`);
+    await writeFile(tmpFile, outputText, "utf-8");
+    const mod = await import(pathToFileURL(tmpFile).href);
     principles.push(mod.meta);
   }
   return principles;
@@ -141,6 +156,7 @@ async function main() {
   }
 
   console.log(`prerendered ${principles.length} principle pages + home + references`);
+  await rm(tmpDir, { recursive: true, force: true });
 }
 
 main().catch((err) => {

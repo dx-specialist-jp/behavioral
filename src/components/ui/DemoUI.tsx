@@ -33,7 +33,14 @@ interface DemoButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export function DemoButton({ variant = "default", selected, className, ...rest }: DemoButtonProps) {
   const base = variant === "primary" ? styles.buttonPrimary : styles.button;
   const classes = [base, selected ? styles.buttonSelected : "", className].filter(Boolean).join(" ");
-  return <button type="button" className={classes} {...rest} />;
+  return (
+    <button
+      type="button"
+      className={classes}
+      aria-pressed={selected !== undefined ? selected : undefined}
+      {...rest}
+    />
+  );
 }
 
 interface DemoSliderProps {

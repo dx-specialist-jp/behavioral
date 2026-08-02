@@ -4,6 +4,7 @@ import { principlesByCategory, allPrinciples } from "../principles/registry";
 import { PrincipleCard } from "../components/PrincipleCard";
 import { useVisitedPrinciples } from "../hooks/useVisitedPrinciples";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
+import heroImage from "../assets/hero/title.jpg";
 import styles from "./HomePage.module.css";
 
 const CATEGORY_ORDER: PrincipleCategory[] = [
@@ -40,8 +41,12 @@ export function HomePage() {
     <div>
       <section className={styles.hero}>
         <span className={styles.heroKicker}>Behavioral Economics Encyclopedia</span>
-        <h1 className={styles.heroTitle}>行動経済学大全</h1>
-        <p className={styles.heroSubtitle}>人はなぜ、いつも「合理的」に選べないのか。</p>
+        <h1 className={styles.srOnly}>行動経済学大全</h1>
+        <img
+          src={heroImage}
+          alt="行動経済学大全 ── 人の心がつくる、より良い選択の科学"
+          className={styles.heroImage}
+        />
         <p className={styles.heroLead}>
           行動経済学の原理を1つずつ、イラストと自分で試せるミニ体験で学べるサイトです。読むだけでなく、実際にクリックして自分の中の「くせ」に気づいてみましょう。
         </p>

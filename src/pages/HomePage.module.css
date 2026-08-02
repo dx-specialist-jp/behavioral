@@ -1,6 +1,6 @@
 .hero {
   padding: var(--space-6) var(--space-4) var(--space-5);
-  max-width: 880px;
+  max-width: var(--content-width);
   margin: 0 auto;
   text-align: center;
 }
@@ -83,7 +83,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-2) var(--space-4);
-  max-width: 880px;
+  max-width: var(--content-width);
   margin: 0 auto var(--space-6);
   padding: var(--space-3) var(--space-4);
   border-top: 1px solid var(--color-border);
@@ -116,7 +116,7 @@
 }
 
 .section {
-  max-width: 880px;
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--space-4) var(--space-6);
   scroll-margin-top: 84px;
@@ -147,5 +147,11 @@
 @media (min-width: 960px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1240px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
